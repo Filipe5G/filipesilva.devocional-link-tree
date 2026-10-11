@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filipe Silva | Devocional</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Ícones Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="shortcut icon" href="foto-perfil.jpg" type="image/x-icon" sizes="256x256">
+</head>
+<body>
+
+  <div class="background-overlay"></div>
+
+  <main class="container">
+    <!-- Perfil -->
+    <header class="profile">
+      <div class="avatar-wrapper">
+        <img src="foto-perfil.jpg" alt="Filipe Silva" class="avatar">
+      </div>
+      <h1 class="profile-title">Filipe Silva</h1>
+      <p class="profile-subtitle">Devocional</p>
+      <p class="profile-bio">📖 Palavra, Oração e Edificação da Fé<br>🔴 Lives Seg, Qua e Sex às 06:30</p>
+    </header>
+
+    <!-- Lista de Links -->
+    <section class="links-container">
+
+      <!-- Link Destaque (YouTube Live) -->
+      <a href="https://youtube.com/@filipesilvadevocional" target="_blank" class="link-card featured">
+        <div class="link-icon">
+          <i class="fa-brands fa-youtube"></i>
+        </div>
+        <div class="link-text">
+          <span class="link-title">Assistir Live no YouTube</span>
+          <span class="link-desc">Inscreva-se e ative as notificações</span>
+        </div>
+        <div class="link-badge">AO VIVO</div>
+      </a>
+
+      <!-- Link Blog -->
+      <a href="https://seu-blog.com" target="_blank" class="link-card">
+        <div class="link-icon">
+          <i class="fa-solid fa-book-bible"></i>
+        </div>
+        <div class="link-text">
+          <span class="link-title">Blog Devocional</span>
+          <span class="link-desc">Artigos e reflexões diárias</span>
+        </div>
+      </a>
+
+      <!-- Link Pedido de Oração -->
+      <a href="https://forms.google.com" target="_blank" class="link-card">
+        <div class="link-icon">
+          <i class="fa-solid fa-hands-praying"></i>
+        </div>
+        <div class="link-text">
+          <span class="link-title">Enviar Pedido de Oração</span>
+          <span class="link-desc">Intercedemos por você nas lives</span>
+        </div>
+      </a>
+
+      <!-- Link Grupo WhatsApp -->
+      <a href="https://chat.whatsapp.com" target="_blank" class="link-card">
+        <div class="link-icon">
+          <i class="fa-brands fa-whatsapp"></i>
+        </div>
+        <div class="link-text">
+          <span class="link-title">Comunidade no WhatsApp</span>
+          <span class="link-desc">Avisos de lives e versículos</span>
+        </div>
+      </a>
+
+    </section>
+
+    <!-- Rodapé Aprimorado -->
+    <footer class="social-footer">
+      
+      <!-- Botão de Compartilhar Linktree -->
+      <button id="shareBtn" class="share-btn">
+        <i class="fa-solid fa-share-nodes"></i> Compartilhar este perfil
+      </button>
+
+      <!-- Divisor Elegante -->
+      <div class="footer-divider">
+        <span class="divider-line"></span>
+        <span class="divider-line"></span>
+      </div>
+
+      <!-- Versículo do Rodapé -->
+      <blockquote class="footer-quote">
+        "O Senhor te abençoe e te guarde."
+        <cite>Números 6:24</cite>
+      </blockquote>
+
+      <!-- Direitos Autoriais / Marca -->
+      <div class="brand-credits">
+        <p class="copyright">&copy; <span id="year"></span> Todos os direitos reservados.</p>
+      </div>
+
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
