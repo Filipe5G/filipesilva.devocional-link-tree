@@ -1,1 +1,527 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filipe Silva Devocional - Em Breve</title>
 
+    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================
+           VARIÁVEIS GLOBAIS E PALETA ESPIRITUAL/SOBRIA
+           ========================================== */
+        :root {
+            --bg-dark: #070B14;
+            --bg-card: rgba(15, 23, 42, 0.65);
+            --border-gold: rgba(212, 175, 55, 0.25);
+            --border-gold-hover: rgba(230, 194, 128, 0.5);
+            
+            /* Dourado Suave & Champagne */
+            --gold-primary: #E6C280;
+            --gold-secondary: #D4AF37;
+            --gold-glow: rgba(212, 175, 55, 0.15);
+            
+            /* Tipografia */
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --text-gold-light: #F3E5AB;
+            
+            --font-title: 'Playfair Display', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+            padding: 2.5rem 1.5rem;
+        }
+
+        /* ==========================================
+           ILUMINAÇÃO DE FUNDO E TEXTURAS ELEGANTES
+           ========================================== */
+        .bg-glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(140px);
+            z-index: 0;
+            pointer-events: none;
+            animation: pulseGlow 10s ease-in-out infinite alternate;
+        }
+
+        .glow-top-gold {
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, rgba(0,0,0,0) 70%);
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .glow-bottom-blue {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(30, 58, 138, 0.35) 0%, rgba(0,0,0,0) 70%);
+            bottom: -150px;
+            right: -100px;
+            animation-delay: -5s;
+        }
+
+        @keyframes pulseGlow {
+            0% { transform: scale(1) translate(0, 0); opacity: 0.5; }
+            100% { transform: scale(1.15) translate(15px, 15px); opacity: 0.8; }
+        }
+
+        /* Padrão Estelar/Partículas Elegantes */
+        .bg-pattern {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(230, 194, 128, 0.08) 1px, transparent 1px);
+            background-size: 32px 32px;
+            z-index: 0;
+            mask-image: radial-gradient(circle at center, black 50%, transparent 85%);
+            -webkit-mask-image: radial-gradient(circle at center, black 50%, transparent 85%);
+            pointer-events: none;
+        }
+
+        /* ==========================================
+           CONTAINER E ESTRUTURA PRINCIPAL
+           ========================================== */
+        .container {
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Badge do Cabeçalho */
+        header {
+            margin-bottom: 2rem;
+            animation: fadeInDown 0.9s ease-out;
+        }
+
+        .brand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.5rem 1.4rem;
+            background: rgba(212, 175, 55, 0.06);
+            border: 1px solid var(--border-gold);
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gold-primary);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .cross-icon {
+            width: 14px;
+            height: 14px;
+            fill: var(--gold-primary);
+        }
+
+        /* Títulos e Tipografia Devocional */
+        main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .title {
+            font-family: var(--font-title);
+            font-size: clamp(2.4rem, 5.5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+            animation: fadeInUp 0.9s ease-out 0.2s backwards;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFFFFF 20%, var(--gold-primary) 65%, var(--gold-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-family: var(--font-title);
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-style: italic;
+            color: var(--text-gold-light);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            opacity: 0.9;
+            animation: fadeInUp 0.9s ease-out 0.3s backwards;
+        }
+
+        .divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.9s ease-out 0.35s backwards;
+        }
+
+        .description {
+            font-size: clamp(0.98rem, 1.8vw, 1.125rem);
+            color: var(--text-muted);
+            max-width: 640px;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+            font-weight: 400;
+            animation: fadeInUp 0.9s ease-out 0.4s backwards;
+        }
+
+        /* ==========================================
+           CONTADOR REGRESSIVO DOURADO E SÓBRIO
+           ========================================== */
+        .countdown-container {
+            display: flex;
+            gap: 1.25rem;
+            margin-bottom: 3.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeInUp 0.9s ease-out 0.5s backwards;
+        }
+
+        .time-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 1.25rem 1.5rem;
+            border-radius: 1.25rem;
+            min-width: 110px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .time-box:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-gold-hover);
+            box-shadow: 0 12px 35px var(--gold-glow);
+        }
+
+        .number {
+            font-family: var(--font-title);
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            color: #FFFFFF;
+            font-variant-numeric: tabular-nums;
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .label {
+            font-size: 0.725rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--gold-primary);
+            font-weight: 600;
+        }
+
+        /* Mensagem de Feedback */
+        .form-message {
+            font-size: 0.9rem;
+            min-height: 24px;
+            margin-bottom: 2.5rem;
+            transition: all 0.3s ease;
+            opacity: 0;
+            font-weight: 500;
+        }
+
+        .form-message.success {
+            color: #34D399;
+            opacity: 1;
+        }
+
+        .form-message.error {
+            color: #F87171;
+            opacity: 1;
+        }
+
+        /* ==========================================
+           REDES SOCIAIS E RODAPÉ
+           ========================================== */
+        .social-links {
+            display: flex;
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 0.9s ease-out 0.7s backwards;
+        }
+
+        .social-btn {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            transition: transform 0.3s ease;
+        }
+
+        .social-btn:hover {
+            color: #FFFFFF;
+            background: var(--gold-secondary);
+            border-color: var(--gold-primary);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px var(--gold-glow);
+        }
+
+        .social-btn:hover svg {
+            transform: scale(1.1);
+            fill: #070B14;
+        }
+
+        footer {
+            z-index: 1;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+            animation: fadeIn 1s ease-out 0.8s backwards;
+        }
+
+        footer p span.gold-name {
+            color: var(--gold-primary);
+            font-weight: 600;
+        }
+
+        /* ==========================================
+           ANIMAÇÕES CSS
+           ========================================== */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(22px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-22px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ==========================================
+           RESPONSIVIDADE DISPOSITIVOS MÓVEIS
+           ========================================== */
+        @media (max-width: 640px) {
+            body {
+                padding: 2rem 1rem;
+            }
+
+            .countdown-container {
+                gap: 0.6rem;
+            }
+
+            .time-box {
+                min-width: 76px;
+                padding: 0.85rem 0.65rem;
+                border-radius: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Elementos de Fundo e Luzes de Ambiente -->
+    <div class="bg-glow glow-top-gold"></div>
+    <div class="bg-glow glow-bottom-blue"></div>
+    <div class="bg-pattern"></div>
+
+    <!-- Container Principal -->
+    <div class="container">
+        
+        <!-- Header com Badge de Fé -->
+        <header>
+            <div class="brand-badge">
+                <svg class="cross-icon" viewBox="0 0 24 24">
+                    <path d="M11 2h2v7h7v2h-7v11h-2V11H4V9h7V2z"/>
+                </svg>
+                <span>Em Breve • Novo Projeto</span>
+            </div>
+        </header>
+
+        <!-- Seção Hero -->
+        <main>
+            <h1 class="title">
+                <span class="gold-gradient-text">Filipe Silva Devocional</span>
+            </h1>
+            <p class="subtitle">Reflexões, Palavra & Edificação Diária</p>
+
+            <div class="divider"></div>
+
+            <p class="description">
+                Estou preparando um espaço abençoado dedicado ao fortalecimento da sua vida espiritual. 
+                Em breve você terá acesso a devocionais diários, estudos bíblicos e conteúdos pensados para inspirar sua caminhada de fé.
+            </p>
+
+            <!-- Contador Regressivo -->
+            <div class="countdown-container">
+                <div class="time-box">
+                    <span class="number" id="days">00</span>
+                    <span class="label">Dias</span>
+                </div>
+                <div class="time-box">
+                    <span class="number" id="hours">00</span>
+                    <span class="label">Horas</span>
+                </div>
+                <div class="time-box">
+                    <span class="number" id="minutes">00</span>
+                    <span class="label">Minutos</span>
+                </div>
+                <div class="time-box">
+                    <span class="number" id="seconds">00</span>
+                    <span class="label">Segundos</span>
+                </div>
+            </div>
+
+            <!-- Redes Sociais com SVGs Customizados -->
+            <div class="social-links">
+                <!-- Instagram -->
+                <a href="https://instagram.com" target="_blank" class="social-btn" aria-label="Instagram Filipe Silva Devocional" title="Instagram">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <!-- YouTube -->
+                <a href="https://youtube.com" target="_blank" class="social-btn" aria-label="YouTube Filipe Silva Devocional" title="YouTube">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+                <!-- Spotify (Podcasts Devocionais) -->
+                <a href="https://spotify.com" target="_blank" class="social-btn" aria-label="Spotify Filipe Silva Devocional" title="Spotify Podcast">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.48-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141 C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.281 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.18-.1.2-1.02-.36-.18-.6.36-1.02 1.02-1.2 4.2-1.26 11.28-1.02 15.72 1.62.54.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                    </svg>
+                </a>
+            </div>
+        </main>
+
+        <!-- Rodapé -->
+        <footer>
+            <p>&copy; <span id="year"></span> <span class="gold-name">Filipe Silva Devocional</span>. Todos os direitos reservados.</p>
+        </footer>
+
+    </div>
+
+    <!-- Script para Lógica da Contagem Regressiva e Formulário -->
+    <script>
+        // Setar Ano Atual no Rodapé
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Lógica da Contagem Regressiva (Definida para 21 dias a partir de hoje)
+        const targetDate = new Date();
+        targetDate.setDate(targetDate.getDate() + 21);
+
+        function updateCountdown() {
+            const currentTime = new Date();
+            const difference = targetDate - currentTime;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((difference / 1000 / 60) % 60);
+                const seconds = Math.floor((difference / 1000) % 60);
+
+                document.getElementById('days').textContent = days < 10 ? '0' + days : days;
+                document.getElementById('hours').textContent = hours < 10 ? '0' + hours : hours;
+                document.getElementById('minutes').textContent = minutes < 10 ? '0' + minutes : minutes;
+                document.getElementById('seconds').textContent = seconds < 10 ? '0' + seconds : seconds;
+            } else {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+
+        // Atualizar contador a cada segundo
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Feedback do Formulário de Inscrição
+        const form = document.getElementById('newsletter-form');
+        const emailInput = document.getElementById('email-input');
+        const messageBox = document.getElementById('form-message');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = emailInput.value.trim();
+
+            if (email) {
+                // Mensagem de Sucesso Personalizada
+                messageBox.textContent = 'Abençoado seja! Você receberá nossas primeiras reflexões em primeira mão. 📖✨';
+                messageBox.className = 'form-message success';
+                emailInput.value = '';
+
+                setTimeout(() => {
+                    messageBox.style.opacity = '0';
+                    setTimeout(() => {
+                        messageBox.textContent = '';
+                        messageBox.className = 'form-message';
+                        messageBox.style.opacity = '1';
+                    }, 300);
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html>
